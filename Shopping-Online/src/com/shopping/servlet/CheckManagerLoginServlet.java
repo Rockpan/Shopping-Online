@@ -12,7 +12,7 @@ import com.shopping.service.CheckUsernameService;
 
 /**
  * 
- * @author ÅËÏ£³Ç
+ * @author ï¿½ï¿½Ï£ï¿½ï¿½
  *
  */
 public class CheckManagerLoginServlet extends HttpServlet {
@@ -28,11 +28,11 @@ public class CheckManagerLoginServlet extends HttpServlet {
 		int isChecked = s.checkExist(username, password);
 		if (isChecked == 1) {
 			System.out.println("isChecked1......" + isChecked);
-			request.getRequestDispatcher("/manager_main.jsp").forward(request, response);
+			response.sendRedirect(request.getContextPath() + "/manager_page.jsp");
 		} else {
 			System.out.println("isChecked2......" + isChecked);
 			HttpSession session = request.getSession();
-			session.setAttribute("LoginError", "µÇÂ¼Ê§°Ü");
+			session.setAttribute("LoginError", "error");
 			request.getRequestDispatcher("/manager_login.jsp").forward(request, response);
 		}
 	}

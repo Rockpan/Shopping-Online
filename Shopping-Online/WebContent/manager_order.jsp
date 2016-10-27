@@ -47,17 +47,17 @@
 					if (data != null)
 						s = s
 								+ "<tr><td><input type=\"checkbox\" name=\"id\" /></td>"
-								+ "<td>" + data.product_id + "</td>" + "<td>"
+								+ "<td>" + data.order_id + "</td>" + "<td>"
+								+ data.user_name + "</td>" + "<td>"
 								+ data.product_name + "</td>" + "<td>"
-								+ data.product_price + "</td>" + "<td>"
-								+ data.product_category + "</td>" + "<td>"
-								+ data.product_description + "</td>" + "<td>"
-								+ data.store_name + "</td></tr>";
+								+ data.total_price + "</td>" + "<td>"
+								+ data.order_card + "</td>" + "<td>"
+								+ data.product_state + "</td></tr>";
 				}
 				document.getElementById("detail").innerHTML = s;
 			}
 		}
-		xmlHttp.open("GET", "/Shopping-Online/ShowProduct.htm?category=" + str,
+		xmlHttp.open("GET", "/Shopping-Online/OrderDetailServlet.htm?state=" + str,
 				true);
 		xmlHttp.send();
 	}
@@ -69,19 +69,18 @@
 		<div class="right">
 			<div class="current">
 				当前位置：<a href="javascript:void(0)" style="color: #6E6E6E;">管理界面</a>
-				&gt; 商品产品详情
+				&gt; 订单详情
 			</div>
 			<div class="rightCont">
 
 				<table class="tab1">
 					<tbody>
 						<tr>
-							<td><select name="product_category"
+							<td><select name="status"
 								onchange="showProduct(this.value)">
-									<option value="all">所有</option>
-									<option value="shoes">鞋</option>
-									<option value="clothes">衣</option>
-									<option value="pants">裤</option>
+									<option value="all">所有订单</option>
+									<option value="1">未发货</option>
+									<option value="2">发货</option>
 							</select></td>
 						</tr>
 					</tbody>
@@ -93,11 +92,11 @@
 							<tr>
 								<th><input type="checkbox" id="all" onclick="" /></th>
 								<th>id</th>
-								<th>名称</th>
-								<th>价格</th>
-								<th>种类</th>
-								<th>描述</th>
-								<th>店铺</th>
+								<th>用户</th>
+								<th>商品</th>
+								<th>总价</th>
+								<th>订单号</th>
+								<th>订单状态</th>
 							</tr>
 
 						</thead>

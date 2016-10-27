@@ -7,9 +7,9 @@ import java.sql.SQLException;
 import com.shopping.util.DBHelper;
 
 /**
- * 用于查询是否有此用户
+ *
  * 
- * @author 潘希城
+ * @author Rock
  *
  */
 public class CheckUsernameDao {
@@ -17,11 +17,11 @@ public class CheckUsernameDao {
 	private DBHelper db = null;
 	private PreparedStatement preparedStatement;
 	private String sql;
-	private int isChecked = -1;// -1表示不存在此用户,0表示密码或用户名不匹配，1表示密码或用户名匹配
+	private int isChecked = -1;
 
 	public CheckUsernameDao() {
 		db = new DBHelper();
-		sql = "select password from login where username = ?";
+		sql = "select password from managerLogin where username = ?";
 	}
 
 	public int checkExist(String username,String password) {
@@ -51,7 +51,7 @@ public class CheckUsernameDao {
 			preparedStatement.setString(1, username);
 			ResultSet rs = preparedStatement.executeQuery();
 			if (rs.next()) {
-				return 1;//这里只要返回大于-1的值就可以
+				return 1;//锟斤拷锟斤拷只要锟斤拷锟截达拷锟斤拷-1锟斤拷值锟酵匡拷锟斤拷
 			}
 
 		} catch (SQLException e) {

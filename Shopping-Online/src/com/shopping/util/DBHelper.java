@@ -8,7 +8,7 @@ import java.sql.SQLException;
 
 public class DBHelper {
 
-	public static final String url = "jdbc:mysql://localhost:3306/library";
+	public static final String url = "jdbc:mysql://localhost:3306/shopping";
 	public static final String name = "com.mysql.jdbc.Driver";
 	public static final String user = "root";
 	public static final String password = "niit";
@@ -18,9 +18,9 @@ public class DBHelper {
 	public ResultSet rest = null;
 
 	/**
-	 * �����������ݿ�
+	 * 锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟捷匡拷
 	 * 
-	 * @return Connection���͵�ֵ
+	 * @return Connection锟斤拷锟酵碉拷值
 	 */
 	public Connection open() {
 		try {
@@ -38,9 +38,9 @@ public class DBHelper {
 	}
 	
 	/**
-	 * ���ڻ�ò�ѯ�õ���ResultSet
+	 * 锟斤拷锟节伙拷貌锟窖拷玫锟斤拷锟絉esultSet
 	 * 
-	 * @param sql ��ѯ���
+	 * @param sql 锟斤拷询锟斤拷锟�
 	 * @return rest 
 	 */
 	public ResultSet getResultSet(String sql) {
@@ -61,7 +61,7 @@ public class DBHelper {
 	}
 
 	/**
-	 * ���ڹر����ݿ�
+	 * 锟斤拷锟节关憋拷锟斤拷锟捷匡拷
 	 */
 	public void close() {
 		try {

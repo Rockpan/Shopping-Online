@@ -12,7 +12,7 @@ import com.shopping.service.CheckUsernameService;
 
 /**
  * 
- * @author 潘希城
+ * @author Rock
  *
  */
 public class CheckUsernameServlet extends HttpServlet {
@@ -24,7 +24,7 @@ public class CheckUsernameServlet extends HttpServlet {
 		String password = req.getParameter("password");
 		if (username.length() == 0) {
 			resp.setCharacterEncoding("utf-8");
-			resp.getWriter().println("<font color='red'>用户名不能为空</font>");
+			resp.getWriter().println("<font color='red'>username can't empty</font>");
 			return ;
 		}
 		CheckUsernameService s = new CheckUsernameService();
@@ -32,7 +32,7 @@ public class CheckUsernameServlet extends HttpServlet {
 
 		if (isChecked == -1) {
 			resp.setCharacterEncoding("utf-8");
-			resp.getWriter().println("<font color='red'>用户不存在</font>");
+			resp.getWriter().println("<font color='red'>username is wrong</font>");
 		}
 		
 
